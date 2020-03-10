@@ -26,6 +26,11 @@ class Movie
      */
     private $date;
 
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    private $categories;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -51,6 +56,18 @@ class Movie
     public function setDate(?\DateTimeInterface $date): self
     {
         $this->date = $date;
+
+        return $this;
+    }
+
+    public function getCategories(): ?string
+    {
+        return $this->categories;
+    }
+
+    public function setCategories(string $categories): self
+    {
+        $this->categories = $categories;
 
         return $this;
     }
